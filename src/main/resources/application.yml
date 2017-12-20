@@ -1,0 +1,17 @@
+server:
+  port: 8081
+spring:
+  thymeleaf:
+    cache: false
+security:
+  oauth2:
+    client:
+      authorized-grant-types: authorization_code
+      scope: read write
+      client-secret: secret
+      access-token-uri: http://localshot:8080/oauth/token
+      user-authorization-uri: http://localhost:8080/oauth/authorize
+      client-id: client
+    resource:
+      user-info-uri: http://localhost:8080/api/me
+      token-info-uri: http://localhost:8080/oauth/check_token
